@@ -5,4 +5,5 @@ export const displayWeather = () => {
 	const displayWeather = document.querySelector("#weather");
 
 	displayWeather.textContent = { ...showConditions() };
+	appMain.appendChild(displayWeather);
 };

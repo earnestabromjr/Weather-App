@@ -1,5 +1,6 @@
 import "./styles.css";
-import { getWeather, showConditions } from "./weather.js";
+import { showConditions } from "./display";
+import { parseLocation } from "./utils";
 
 const baseUrl =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
@@ -10,7 +11,7 @@ const searchButton = document.querySelector("button");
 searchButton.addEventListener("click", () => {
   const searchInput = document.getElementById("search-input");
   const city = searchInput.value;
-  const searchCity = city.replace(/\s/g, "");
+  const searchCity = 
   console.log(searchCity);
   console.log(city);
 });

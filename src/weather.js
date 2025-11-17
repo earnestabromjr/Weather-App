@@ -1,5 +1,9 @@
-export async function getWeather (location) {
-  const apiKey = 'NXM6AE9X7YT4X22T94BU7547V'
+import { parseLocation } from './utils';
+
+
+async function getWeather(location) {
+  const apiKey = 'NXM6AE9X7YT4X22T94BU7547V';
+  parseLocation(location);
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=${apiKey}&contentType=json`
 
   const response = await fetch(url)
@@ -7,7 +11,7 @@ export async function getWeather (location) {
   return data
 }
 
-export async function showConditions (location) {
+export async function showConditions(location) {
   const data = await getWeather(location)
 
   // Access the first day's current conditions

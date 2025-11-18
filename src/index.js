@@ -1,5 +1,5 @@
 import "./styles.css";
-import { showConditions } from "./display";
+import { displayWeather } from "./display";
 import { parseLocation } from "./utils";
 
 const baseUrl =

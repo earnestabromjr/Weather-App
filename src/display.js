@@ -1,13 +1,18 @@
 import { showConditions } from "./weather";
 
-export const displayWeather = () => {
+export const displayWeather = async (location) => {
 	const appMain = document.querySelector("#app");
 	const displayWeather = document.querySelector("#weather");
-	const conditions = showConditions();
-	for (const [key, value] of Object.entries(conditions)) {
-		const li = document.createElement("li");
-		li.textContent = `${key}: ${value}`;
-		displayWeather.appendChild(li);
+	displayWeather.innerHTML = "";
+	try {
+		const conditions = await showConditions();
+		for (const [key, value] of Object.entries(conditions)) {
+			const li = document.createElement("li");
+			li.textContent = `${key}: ${value}`;
+			displayWeather.appendChild(li);
+		}
+	} catch (error) {
+		console.log(error);
+		displayWeather.innerHTML = error.message;
 	}
-	appMain.appendChild(displayWeather);
 };

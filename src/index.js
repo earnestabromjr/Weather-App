@@ -10,10 +10,22 @@ searchButton.addEventListener("click", async (event) => {
 	event.preventDefault();
 	const searchInput = document.getElementById("search-input");
 	const city = searchInput.value;
-	const searchCity = parseLocation(city);
-	await displayWeather(searchCity.city);
-	console.log(searchCity.city);
+	await displayWeather(city);
 	console.log(city);
+	console.log(city);
+});
+
+const clear = document.getElementById("clear");
+clear.addEventListener("click", () => {
+	const searchInput = document.getElementById("search-input");
+	const weather = document.getElementById("weather");
+	if (weather.children.length != 0) {
+		for (const li of weather.children) {
+			li.remove();
+		}
+	}
+	searchInput.value = "";
+	displayWeather("");
 });
 
 // const requestUrl = `${baseUrl}/${city}?unitGroup=us&key=${apiKey}&contentType=json&startDate=today`;

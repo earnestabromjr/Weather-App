@@ -5,7 +5,7 @@ export const displayWeather = async (location) => {
 	const displayWeather = document.querySelector("#weather");
 	displayWeather.innerHTML = "";
 	try {
-		const conditions = await showConditions();
+		const conditions = await showConditions(location);
 		for (const [key, value] of Object.entries(conditions)) {
 			const li = document.createElement("li");
 			li.textContent = `${key}: ${value}`;

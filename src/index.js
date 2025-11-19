@@ -7,11 +7,12 @@ const searchForm = document.getElementById("search-form");
 const searchButton = document.querySelector("button");
 
 searchButton.addEventListener("click", () => {
+	preventDefault();
 	const searchInput = document.getElementById("search-input");
 	const city = searchInput.value;
 	const searchCity = parseLocation(city);
-	displayWeather(searchCity);
-	console.log(searchCity);
+	displayWeather(searchCity.city);
+	console.log(searchCity.city);
 	console.log(city);
 });
 

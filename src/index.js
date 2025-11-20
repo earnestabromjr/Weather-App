@@ -25,7 +25,6 @@ clear.addEventListener("click", () => {
 		}
 	}
 	searchInput.value = "";
-	displayWeather("");
 });
 
 // const requestUrl = `${baseUrl}/${city}?unitGroup=us&key=${apiKey}&contentType=json&startDate=today`;

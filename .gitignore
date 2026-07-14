@@ -1,2 +1,5 @@
 node_modules
 dist
+GEMINI.md
+.env
+refactor.md

@@ -16,7 +16,6 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: "Adwaita Mono", monospace;
-    background: #FFFFFF;
     background: var(--grad-color3), var(--grad-color2);
     font-family: var(--my-font, monospace);
 }

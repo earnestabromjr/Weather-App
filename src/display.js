@@ -1,7 +1,6 @@
 import { showConditions } from "./weather";
 
 export const displayWeather = async (location) => {
-	const appMain = document.querySelector("#app");
 	const displayWeather = document.querySelector("#weather");
 	displayWeather.innerHTML = "";
 	try {

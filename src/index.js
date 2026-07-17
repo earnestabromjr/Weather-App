@@ -1,12 +1,10 @@
 import "./styles.css";
 import { displayWeather } from "./display";
 
-// const apiKey = process.env.WEATHER_API_KEY;
-// const searchForm = document.getElementById("search-form");
-const searchButton = document.querySelector("button");
+const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
 
-searchButton.addEventListener("submit", async (event) => {
+searchForm.addEventListener("submit", async (event) => {
 	event.preventDefault();
 	const city = searchInput.value;
 	await displayWeather(city);

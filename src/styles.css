@@ -1,13 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Droid+Sans");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    --grad-color: linear-gradient(90deg,rgba(255, 255, 255, 1) 6%, rgba(121, 9, 72, 1) 100%, rgba(106, 0, 255, 1) 100%);
-    --grad-color2: linear-gradient(90deg,rgba(189, 83, 124, 1) 0%, rgba(121, 9, 72, 1) 35%, rgba(106, 0, 255, 1) 100%);
-    --grad-color3: linear-gradient(90deg,rgba(255, 255, 255, 1) 6%, rgba(232, 225, 174, 1) 100%, rgba(240, 218, 120, 1) 100%);
+:root {
+    --base: #303446;
+    --mantle: #292c3c;
+    --crust: #232634;
+    --surface0: #414559;
+    --surface1: #51576d;
+    --surface2: #626880;
+    --overlay0: #737994;
+    --overlay1: #838ba7;
+    --overlay2: #949cbb;
+    --subtext0: #a5adce;
+    --subtext1: #b5bfe2;
+    --text: #c6d0f5;
+    --lavender: #babbf1;
+    --blue: #8caaee;
+    --sapphire: #85c1dc;
+    --sky: #99d1db;
+    --teal: #81c8be;
+    --green: #a6d189;
+    --yellow: #e5c890;
+    --peach: #ef9f76;
+    --maroon: #ea999c;
+    --red: #e78284;
+    --mauve: #ca9ee6;
+    --pink: #f4b8e4;
+    --flamingo: #eebebe;
+    --rosewater: #f2d5cf;
     --my-font: "Droid Sans", sans-serif;
 }
 
@@ -15,68 +40,106 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Adwaita Mono", monospace;
-    background: var(--grad-color3), var(--grad-color2);
-    font-family: var(--my-font, monospace);
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--my-font);
+    background: var(--base);
+    color: var(--text);
 }
 
-header {
+#app {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+    margin: 2rem;
+    background: var(--mantle);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
 }
 
-img {
-    width: 300px;
-    height: 200px;
-}
-
-nav {
+#search-form {
     display: flex;
     flex-direction: row;
-    justify-content: start;
     align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: var(--grad-color);
-    color: white;
+    gap: 0.75rem;
 }
-nav button {
-    background-color: #bd537c;
-    background: var(--grad-color3);
-    color: saddlebrown;
+
+label {
+    font-size: 1.1rem;
+    color: var(--subtext0);
+}
+
+input[type="text"] {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--surface1);
+    border-radius: 0.5rem;
+    background: var(--surface0);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--mauve);
+}
+
+button {
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
     border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
+    border-radius: 0.5rem;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
+    transition: background 0.2s, transform 0.1s;
 }
 
-#content {
+button[type="submit"] {
+    background: var(--mauve);
+    color: var(--base);
+    font-weight: 700;
+}
+
+button[type="submit"]:hover {
+    background: var(--pink);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.96);
+}
+
+#clear {
+    background: var(--surface1);
+    color: var(--text);
+}
+
+#clear:hover {
+    background: var(--surface2);
+}
+
+#weather {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    min-width: 280px;
+    background: var(--surface0);
+    border-radius: 0.75rem;
+    list-style: none;
 }
 
-#content h1 {
-    font-family: "Droid Sans", sans-serif;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+#weather li {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    color: var(--subtext1);
+    background: var(--surface1);
+    border-radius: 0.4rem;
+}
+
+#weather li:first-child {
+    font-size: 1.4rem;
     font-weight: 700;
-    font-size: 3rem;
-}
-
-#content h2 {
-    font-family: "Adwaita Mono", monospace;
-    font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-#menu {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--grad-color2);
+    background: var(--mauve);
+    color: var(--base);
 }
